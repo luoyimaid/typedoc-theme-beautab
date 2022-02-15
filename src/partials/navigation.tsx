@@ -1,10 +1,11 @@
 import { JSX, PageEvent, Reflection } from 'typedoc';
 import { DeclarationReflection } from 'typedoc/dist/lib/models/reflections/declaration';
 
-interface IItem extends DeclarationReflection {
+interface IItem extends Reflection {
+  url: string;
+  children: any;
   title: string;
 }
-
 interface ICategory {
   id: string;
   items: IItem[];
@@ -12,12 +13,12 @@ interface ICategory {
 }
 
 /**
- * Рендерит панель навигации.
+ * 渲染导航栏.
  */
 export const navigation =
   (urlTo: (reflection: Reflection) => string | undefined) =>
   (props: PageEvent<Reflection>): JSX.Element => {
-    const categories = formatFileHierarchy(props.model.project.children || []);
+    const categories = formatFileBeautab(props.model.project.children || []);
 
     return (
       <div class='tree'>
@@ -26,6 +27,9 @@ export const navigation =
     );
   };
 
+/**
+ * 导航栏布局.
+ */
 const Navigation = ({
   id,
   categories,
@@ -59,7 +63,7 @@ const Navigation = ({
           {item.title}
         </a>
         <ul>
-          {item.children?.map((subItem) => (
+          {item.children?.map((subItem: Reflection) => (
             <li class={subItem.cssClasses}>
               <a
                 class='category__link tsd-kind-icon js-category-link'
@@ -76,11 +80,11 @@ const Navigation = ({
   </ul>
 );
 
-const formatFileHierarchy = (values: DeclarationReflection[]): ICategory => {
+const formatFileBeautab = (values: DeclarationReflection[]): ICategory => {
   const result: ICategory = {
+    id: 'root',
     items: [],
     categories: {},
-    id: 'root',
   };
 
   for (const item of values) {

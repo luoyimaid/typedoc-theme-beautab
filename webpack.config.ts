@@ -43,7 +43,5 @@ const config: Configuration = {
   },
 };
 
-/**
- * Описывает webpack-конфиг.
- */
+// exlint-disable jsdoc/require-jsdoc
 export default config;

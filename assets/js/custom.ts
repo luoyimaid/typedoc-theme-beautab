@@ -1,4 +1,7 @@
+import '../css/highlight.css';
 import '../css/custom.css';
+import '../css/icons.css';
+import '../css/style.css';
 
 for (const item of document.querySelectorAll<HTMLElement>(
   '.js-category-title:not([data-id="root"])',

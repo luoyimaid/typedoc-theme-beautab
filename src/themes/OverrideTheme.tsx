@@ -6,8 +6,7 @@ import {
 } from 'typedoc';
 import { Renderer } from 'typedoc/dist/lib/output/renderer';
 import { copy } from 'fs-extra';
-// eslint-disable-next-line unicorn/prefer-node-protocol
-import path from 'path';
+import path from 'node:path';
 
 import { navigation } from '../partials/navigation';
 
@@ -19,6 +18,9 @@ class OverrideThemeContext extends DefaultThemeRenderContext {
   }
 }
 
+/**
+ * 覆盖默认主题.
+ */
 export class OverrideTheme extends DefaultTheme {
   private _contextCache?: OverrideThemeContext;
 
@@ -31,17 +33,14 @@ export class OverrideTheme extends DefaultTheme {
       await copy(
         path.join(
           process.cwd(),
-          '/node_modules/typedoc-theme-hierarchy/dist/assets',
+          '/node_modules/typedoc-theme-beautab/dist/assets',
         ),
         path.join(out, '/assets'),
       );
     });
   }
 
-  /**
-   * Переопределяет стандартный контекст.
-   */
-  public override getRenderContext(): OverrideThemeContext {
+  override getRenderContext(): OverrideThemeContext {
     this._contextCache ||= new OverrideThemeContext(
       this,
       this.application.options,
