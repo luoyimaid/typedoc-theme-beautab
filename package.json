@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "license": "ISC",
   "main": "dist/index.js",
-  "repository": "https://github.com/DiFuks/typedoc-theme-hierarchy",
+  "repository": "https://github.com/luoyimaid/typedoc-theme-beautab",
   "keywords": [
     "typedoc-theme"
   ],
