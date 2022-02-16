@@ -1,9 +1,9 @@
 import { Application, JSX } from 'typedoc';
 
-import { OverrideTheme } from './themes/OverrideTheme';
+import { BeautabOverrideTheme } from './themes/OverrideTheme';
 
 /**.
- * . . . . . 入口文件
+ * 入口文件
  *
  * @param app
  */
@@ -22,5 +22,5 @@ export const load = (app: Application): void => {
     ),
   );
 
-  app.renderer.defineTheme('beautab', OverrideTheme);
+  app.renderer.defineTheme('beautab', BeautabOverrideTheme);
 };

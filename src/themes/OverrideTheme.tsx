@@ -9,20 +9,26 @@ import { copy } from 'fs-extra';
 import path from 'node:path';
 
 import { navigation } from '../partials/navigation';
-
-class OverrideThemeContext extends DefaultThemeRenderContext {
+import {container} from '../partials/properties';
+class BeautabOverrideThemeContext extends DefaultThemeRenderContext {
   public constructor(theme: DefaultTheme, options: Options) {
     super(theme, options);
 
+    // 重新渲染导航栏
     this.navigation = navigation(this.urlTo.bind(this));
+    // 重新渲染分模板页面
+    this.reflectionTemplate = container(this.urlTo.bind(this));
+
+    // 重新渲染主页面（index.html）
+    // this.indexTemplate
   }
 }
 
 /**
- * 覆盖默认主题.
+ * 覆盖默认主题
  */
-export class OverrideTheme extends DefaultTheme {
-  private _contextCache?: OverrideThemeContext;
+export class BeautabOverrideTheme extends DefaultTheme {
+  private _contextCache?: BeautabOverrideThemeContext;
 
   public constructor(renderer: Renderer) {
     super(renderer);
@@ -40,8 +46,8 @@ export class OverrideTheme extends DefaultTheme {
     });
   }
 
-  override getRenderContext(): OverrideThemeContext {
-    this._contextCache ||= new OverrideThemeContext(
+  override getRenderContext(): BeautabOverrideThemeContext {
+    this._contextCache ||= new BeautabOverrideThemeContext(
       this,
       this.application.options,
     );

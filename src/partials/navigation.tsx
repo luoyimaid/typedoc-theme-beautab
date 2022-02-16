@@ -13,7 +13,7 @@ interface ICategory {
 }
 
 /**
- * 渲染导航栏.
+ * 渲染导航栏
  */
 export const navigation =
   (urlTo: (reflection: Reflection) => string | undefined) =>
