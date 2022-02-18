@@ -118,3 +118,57 @@
   vertical-align: middle;
   flex-shrink: 0;
 }
+
+/* spacing */
+
+.container table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.container thead {
+    height: 24px;
+    line-height: 24px;
+    background: rgba(46, 50, 56, 0.05);
+}
+
+.container thead th:first-child {
+    width: 20%;
+}
+
+.container thead th:nth-child(2) {
+    width: 50%;
+}
+
+.container thead th:nth-child(3) {
+    width: 15%;
+}
+
+.container thead th:nth-child(4) {
+    width: 15%;
+}
+
+.container td {
+    padding: 20px;
+}
+
+.container th {
+    padding: 10px 20px;
+}
+
+.container thead th {
+    text-align: left;
+}
+
+.container tbody td {
+    font-size: 14px;
+}
+
+.container tbody td:first-child {
+    font-weight: bold;
+}
+
+.container tbody td:nth-child(3) {
+    color: rgb(252, 136, 0);
+}

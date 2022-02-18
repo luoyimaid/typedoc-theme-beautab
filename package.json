@@ -1,6 +1,6 @@
 {
   "name": "typedoc-theme-beautab",
-  "version": "1.0.7",
+  "version": "1.0.15",
   "license": "ISC",
   "main": "dist/index.js",
   "repository": "https://github.com/luoyimaid/typedoc-theme-beautab",

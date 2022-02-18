@@ -17,7 +17,9 @@ class BeautabOverrideThemeContext extends DefaultThemeRenderContext {
     // 重新渲染导航栏
     this.navigation = navigation(this.urlTo.bind(this));
     // 重新渲染分模板页面
-    this.reflectionTemplate = container(this.urlTo.bind(this));
+    // this.reflectionTemplate = container(this.urlTo.bind(this));
+
+    this.members = container(this.urlTo.bind(this));
 
     // 重新渲染主页面（index.html）
     // this.indexTemplate
