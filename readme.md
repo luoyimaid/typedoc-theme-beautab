@@ -1,4 +1,4 @@
-# Typedoc Theme Hierarchy
+# Typedoc Theme Beautab
 
 ---
 
@@ -19,5 +19,5 @@ npm i typedoc-theme-beautab -D
 ---
 
 ```bash
-typedoc --entryPoints src --entryPointStrategy expand --out docs --plugin ./node_modules/typedoc-theme-hierarchy/dist/index.js --theme beautab
+typedoc --entryPoints src --entryPointStrategy expand --out docs --plugin ./node_modules/typedoc-theme-beautab/dist/index.js --theme beautab
 ```
