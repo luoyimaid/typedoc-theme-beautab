@@ -22,7 +22,7 @@ export const navigation =
 
     return (
       <div class='tree'>
-        <Navigation {...categories} urlTo={urlTo} />
+        {/* <Navigation {...categories} urlTo={urlTo} /> */}
       </div>
     );
   };
